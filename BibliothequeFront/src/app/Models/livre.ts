@@ -4,11 +4,11 @@ import { Emprunt } from "./emprunt";
 import { Etat } from "./etat";
 
 export interface Livre {
-    Id: number;
-    Titre: string;
-    NbPages: number;
-    Domaine: Domaine;
-    Auteur: Auteur;
-    Emprunts: Emprunt[];
-    EtatLivre: Etat.DISPONIBLE;
+    id: number;
+    titre: string;
+    nbPages: number;
+    domaine: Domaine;
+    auteur: Auteur;
+    emprunts: Emprunt[];
+    etatLivre: Etat.DISPONIBLE;
 }

@@ -1,11 +1,11 @@
 import { Lecteur } from "./lecteur";
 
 export interface Adresse {
-    Id: number;
-    Appartement: string;
-    Rue: string;
-    Ville: string;
-    ZipCode: string;
-    Pays: string;
-    Lecteurs: Lecteur;
+    id: number;
+    appartement: string;
+    rue: string;
+    ville: string;
+    zipCode: string;
+    pays: string;
+    lecteurs: Lecteur;
 }
