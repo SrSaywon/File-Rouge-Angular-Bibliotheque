@@ -1,0 +1,14 @@
+.fond {
+    width: 100%;
+    height: 800px;
+    background-image: url(../../../images/bibliotheque.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Protest Riot', sans-serif;
+    color: white;
+    font-size: 60px;
+}
