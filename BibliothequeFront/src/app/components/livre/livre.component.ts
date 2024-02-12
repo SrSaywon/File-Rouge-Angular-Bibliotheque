@@ -10,5 +10,5 @@ import { AjouterLivreComponent } from "../gestionLivres/ajouter-livre/ajouter-li
     imports: [RechercheLivreComponent, AjouterLivreComponent]
 })
 export class LivreComponent {
-
+    
 }
