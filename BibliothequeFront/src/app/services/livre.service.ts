@@ -13,6 +13,7 @@ export class LivreService {
   }
 
   getAll(): Observable<Livre[]> {
-    return this.http.get<Livre[]>(`${this.baseUrl}/Livres`)
+    //return this.http.get<Livre[]>(`${this.baseUrl}/Livres`);
+    return this.http.get<Livre[]>(this.baseUrl + '/Livres');
   }
 }

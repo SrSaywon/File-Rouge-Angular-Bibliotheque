@@ -1,0 +1,19 @@
+mat-card {
+    width: 40%;
+    display: flex;
+    margin : auto;
+    margin-top: 10px;
+    padding: 10px;
+    align-items: end;
+}
+
+mat-card-content {
+    align-self: start;
+}
+
+mat-card-header {
+    font-size: 30px;
+    font-family: 'Protest Riot', sans-serif;
+}
+
+
