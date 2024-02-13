@@ -7,6 +7,9 @@ import {SupprimerLivreComponent} from "./components/gestionLivres/supprimer-livr
 import {ModifierLivreComponent} from "./components/gestionLivres/modifier-livre/modifier-livre.component";
 import {MenuLivreComponent} from "./components/gestionLivres/menu-livre/menu-livre.component";
 import {AjouterLivreComponent} from "./components/gestionLivres/ajouter-livre/ajouter-livre.component";
+import { ListAuteurComponent } from './components/gestionAuteurs/list-auteur/list-auteur.component';
+import { AjouterAuteurComponent } from './components/gestionAuteurs/ajouter-auteur/ajouter-auteur.component';
+
 
 export const routes: Routes = [
     {path: '', pathMatch: 'full', redirectTo: '/home'},
@@ -26,5 +29,7 @@ export const routes: Routes = [
     ]},
     {path: 'credit', component: CreditComponent},
     {path: 'logIn', component: AuthenticationComponent},
+    {path: 'auteurs', component: ListAuteurComponent},
+    {path: 'ajouter-auteurs', component: AjouterAuteurComponent},
     {path: '**', redirectTo: '/'}
 ];
