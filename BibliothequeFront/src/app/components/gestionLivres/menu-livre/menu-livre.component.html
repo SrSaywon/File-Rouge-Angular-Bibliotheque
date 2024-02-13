@@ -1,0 +1,25 @@
+
+<mat-drawer-container class="example-container" >
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-chip-listbox class="mat-mdc-chip-set-stacked">
+      <mat-chip-option routerLink="livres" (click)="drawer.toggle()"> Tous les livres</mat-chip-option>
+      <mat-chip-option routerLink="modifier" (click)="drawer.toggle()">Modifier livre</mat-chip-option>
+      <mat-chip-option routerLink="supprimer" (click)="drawer.toggle()">Supprimer livre</mat-chip-option>
+      <mat-chip-option routerLink="ajouter" (click)="drawer.toggle()">Ajouter livre</mat-chip-option>
+    </mat-chip-listbox>
+  </mat-drawer>
+  <mat-drawer-content class="example-sidenav-content" >
+
+      <div class="toggle-button">
+        <button type="button" mat-raised-button color="primary" (click)="drawer.toggle()">
+          Menu
+        </button>
+      </div>
+      <div class="page-content">
+        <router-outlet></router-outlet>
+      </div>
+
+  </mat-drawer-content>
+
+
+</mat-drawer-container>

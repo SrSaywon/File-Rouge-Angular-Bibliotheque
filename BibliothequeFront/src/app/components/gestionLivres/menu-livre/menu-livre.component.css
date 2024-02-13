@@ -1,0 +1,26 @@
+
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  width:100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-container{
+  height:80%;
+  display:flex;
+  justify-items: left;
+}
+.toggle-button{
+  display:flex;
+  transform: rotate(90deg);
+}
+
+.page-content{
+  width:100%;
+  display:flex;
+  justify-content: center;
+}
+
