@@ -1,2 +1,11 @@
-<app-recherche-livre></app-recherche-livre>
+
+<ng-container>
+    <mat-card *ngFor="let l of livres$ | async">
+        <mat-card-content>Domaine : {{l.domaine.nom}}</mat-card-content>
+        <div>
+            <mat-card-header>{{l.titre}}</mat-card-header>
+            <mat-card-subtitle>{{l.auteur.prenom}} {{l.auteur.nom}}</mat-card-subtitle>
+        </div>
+    </mat-card>
+</ng-container>
 
