@@ -3,6 +3,8 @@ import { LivreComponent } from './components/livre/livre.component';
 import { HomeComponent } from './components/home/home.component';
 import { CreditComponent } from './components/credit/credit.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
+import { ListAuteurComponent } from './components/gestionAuteurs/list-auteur/list-auteur.component';
+import { AjouterAuteurComponent } from './components/gestionAuteurs/ajouter-auteur/ajouter-auteur.component';
 
 export const routes: Routes = [
     {path: '', pathMatch: 'full', redirectTo: '/home'},
@@ -10,5 +12,7 @@ export const routes: Routes = [
     {path: 'livres', component: LivreComponent},
     {path: 'credit', component: CreditComponent},
     {path: 'logIn', component: AuthenticationComponent},
+    {path: 'auteurs', component: ListAuteurComponent},
+    {path: 'ajouter-auteurs', component: AjouterAuteurComponent},
     {path: '**', redirectTo: '/'}
 ];
