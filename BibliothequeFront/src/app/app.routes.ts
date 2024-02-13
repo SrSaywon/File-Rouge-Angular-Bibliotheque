@@ -8,6 +8,7 @@ import {ModifierLivreComponent} from "./components/gestionLivres/modifier-livre/
 import {AjouterLivreComponent} from "./components/gestionLivres/ajouter-livre/ajouter-livre.component";
 import { ListAuteurComponent } from './components/gestionAuteurs/list-auteur/list-auteur.component';
 import { AjouterAuteurComponent } from './components/gestionAuteurs/ajouter-auteur/ajouter-auteur.component';
+import {MenuLivreComponent} from "./components/gestionLivres/menu-livre/menu-livre.component";
 
 
 export const routes: Routes = [
@@ -15,6 +16,17 @@ export const routes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'credit', component: CreditComponent},
     {path: 'logIn', component: AuthenticationComponent},
+  {path: 'menu-livres',
+    component: MenuLivreComponent,
+    children:[
+      {path: 'supprimer',
+        component: SupprimerLivreComponent},
+      {path: 'modifier',
+        component: ModifierLivreComponent},
+      {path: 'livres',
+        component: LivreComponent},
+      {path:'ajouter',
+        component: AjouterLivreComponent}]},
     {path: 'auteurs', component: ListAuteurComponent},
     {path: 'ajouter-auteurs', component: AjouterAuteurComponent},
     {path: '**', redirectTo: '/'}
