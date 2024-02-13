@@ -17,10 +17,19 @@ export class LivreService {
     return this.http.get<Livre[]>(this.baseUrl + '/Livres');
   }
 
-
-
   getById(id: number): Observable<Livre> {
     return this.http.get<Livre>(`${this.baseUrl}/Livres/${id}`)
   }
 
+  deleteById(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/Livres/${id}`)
+  }
+
+  addAuteur(livre: Livre): Observable<Livre> {
+    return this.http.post<Livre>(`${this.baseUrl}/Livres`, livre);
+  }
+
+  ModifierById(id: number, livre: Livre): Observable<Livre> {
+    return this.http.put<Livre>(`${this.baseUrl}/Livres/${id}` , livre)
+  }
 }

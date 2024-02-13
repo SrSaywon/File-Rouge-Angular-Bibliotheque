@@ -4,6 +4,9 @@ import {
   MatCardHeader,
 } from "@angular/material/card";
 import {MatButtonModule} from '@angular/material/button';
+import { LivreService } from '../../../services/livre.service';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-supprimer-livre',
@@ -17,7 +20,23 @@ import {MatButtonModule} from '@angular/material/button';
 
 export class SupprimerLivreComponent {
 
-  Delete() {
+  id!: number;
+  private sub: any;
 
+  constructor(private route: ActivatedRoute, private livreService: LivreService, private router: Router) {}
+  
+  ngOnInit() {
+    this.sub = this.route.params.subscribe(params => {
+      this.id = +params['id'];
+    });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+
+  Delete() {
+    this.livreService.deleteById(this.id);
+    this.router.navigate(['menu-livres/livres'])
   }
 }
