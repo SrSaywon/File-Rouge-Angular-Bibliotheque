@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {RouterLink, RouterOutlet} from "@angular/router";
 import {Livre} from "../../../Models/livre";
 import {MatButtonModule} from '@angular/material/button';
@@ -18,6 +18,8 @@ import {MatChipsModule} from '@angular/material/chips';
   styleUrl: './menu-livre.component.css'
 })
 export class MenuLivreComponent {
-  currentLivre : Livre | null = null;
+  @Input() currentLivre : Livre | null = null;
   showFiller: boolean = false;
+
+  
 }

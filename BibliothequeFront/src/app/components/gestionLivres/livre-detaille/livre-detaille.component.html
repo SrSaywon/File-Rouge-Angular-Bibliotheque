@@ -1,0 +1,12 @@
+<div class="container">
+    <mat-card>
+        <div class="titre">
+            <mat-card-header>{{livreUnique.titre}}</mat-card-header>
+        </div>
+        <hr>
+        <mat-card-content> <span>Auteur(ice) : </span><strong> {{livreUnique.auteur.prenom}} {{livreUnique.auteur.nom}}</strong></mat-card-content>
+        <mat-card-content> <span> Nombres de pages :</span> <strong>  {{livreUnique.nbPages}}</strong></mat-card-content>
+        <mat-card-content> <span> Domaine : </span> <strong> {{livreUnique.domaine.nom}}</strong></mat-card-content>
+        <mat-card-content> <span>Diponibilité : </span> <strong> {{livreUnique.etatLivre}}</strong></mat-card-content>
+    </mat-card>
+</div>

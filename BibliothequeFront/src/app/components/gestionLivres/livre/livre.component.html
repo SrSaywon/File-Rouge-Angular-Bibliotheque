@@ -1,0 +1,18 @@
+
+<ng-container>
+    <mat-card *ngFor="let l of livres$ | async">
+        <mat-card-content>Domaine : {{l.domaine.nom}}</mat-card-content>
+        <div>
+            <mat-card-header>{{l.titre}}</mat-card-header>
+            <mat-card-subtitle>{{l.auteur.prenom}} {{l.auteur.nom}}</mat-card-subtitle>
+        </div>
+        <hr>
+        <div class="butt">
+            <button mat-raised-button color="primary" (click)="setCurrentLivre(l)">Détails</button> 
+            <button mat-flat-button color="accent" (click)="EditCurrentLivre(l)">Modifier</button>
+            <button mat-flat-button color="warn" (click)="DeleteCurrentLivre(l)">Supprimer</button>
+        </div>
+    </mat-card>
+</ng-container>
+
+
