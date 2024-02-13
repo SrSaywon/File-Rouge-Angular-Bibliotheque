@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { BASE_API_URL } from '../constants/injection';
-import { Observable } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 import { Auteur } from '../Models/auteur';
 
 @Injectable({
@@ -16,4 +16,10 @@ export class AuteurService {
     return this.http.get<Auteur[]>(`${this.baseUrl}/Auteurs`);
   }
   
+  /** POST: add a new hero to the database */
+addAuteur(auteur: Auteur): Observable<Auteur> {
+  return this.http.post<Auteur>(`${this.baseUrl}/Auteurs`, auteur);
+}
+ 
+
 }

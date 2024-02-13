@@ -1,0 +1,25 @@
+
+.sort-header{
+    display: flex;
+    justify-content: space-between;
+    margin:3%;
+}
+.auteur-container.informations{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3%;
+    margin:3%;
+}
+
+mat-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3%;
+    margin:3%;
+}
+
+mat-card:hover{
+    background-color: #FFC107;
+}
