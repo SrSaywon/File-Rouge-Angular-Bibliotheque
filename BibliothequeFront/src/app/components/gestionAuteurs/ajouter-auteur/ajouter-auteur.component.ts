@@ -17,4 +17,8 @@ export class AjouterAuteurComponent {
     email: new FormControl(''),
     telephone: new FormControl(''), 
   });
+
+  onClickButton() {
+
+  }
 }
