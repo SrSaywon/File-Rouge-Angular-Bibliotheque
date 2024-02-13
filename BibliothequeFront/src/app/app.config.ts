@@ -5,6 +5,9 @@ import { environment } from './environnement/environnement';
 import { provideHttpClient } from '@angular/common/http';
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {environment} from "./environnement/environnement";
+import {BASE_API_URL} from "./constants/injection";
+import {provideHttpClient} from "@angular/common/http";
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideAnimationsAsync(), provideHttpClient(),
