@@ -1,1 +1,16 @@
-<p>ajouter-auteur works!</p>
+<h2>Nouveau Autheur:</h2>
+<form method="post" (ngSubmit)="onClickButton()" [formGroup]="ajouterAutheurForm">
+    <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder="Nom" formControlName="nom">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Prenom</mat-label>
+        <input matInput placeholder="Prenom" formControlName="prenom">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Courriel" formControlName="email">
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary">Ajouter</button>
+</form>
