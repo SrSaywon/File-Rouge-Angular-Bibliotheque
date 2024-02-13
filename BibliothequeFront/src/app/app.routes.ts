@@ -3,11 +3,27 @@ import { LivreComponent } from './components/livre/livre.component';
 import { HomeComponent } from './components/home/home.component';
 import { CreditComponent } from './components/credit/credit.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
+import {SupprimerLivreComponent} from "./components/gestionLivres/supprimer-livre/supprimer-livre.component";
+import {ModifierLivreComponent} from "./components/gestionLivres/modifier-livre/modifier-livre.component";
+import {MenuLivreComponent} from "./components/gestionLivres/menu-livre/menu-livre.component";
+import {AjouterLivreComponent} from "./components/gestionLivres/ajouter-livre/ajouter-livre.component";
 
 export const routes: Routes = [
     {path: '', pathMatch: 'full', redirectTo: '/home'},
     {path: 'home', component: HomeComponent},
-    {path: 'livres', component: LivreComponent},
+    {path: 'menu-livres',
+      component: MenuLivreComponent,
+    children:[
+      {path: 'supprimer',
+      component: SupprimerLivreComponent},
+      {path: 'modifier',
+      component: ModifierLivreComponent},
+      {path: 'livres',
+     component: LivreComponent},
+      {path:'ajouter',
+      component: AjouterLivreComponent}
+
+    ]},
     {path: 'credit', component: CreditComponent},
     {path: 'logIn', component: AuthenticationComponent},
     {path: '**', redirectTo: '/'}
