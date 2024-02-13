@@ -11,7 +11,6 @@ import { provideHttpClient } from '@angular/common/http';
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideAnimationsAsync(), provideHttpClient(),
     {
-
       provide: BASE_API_URL,
       useValue: environment.BASE_API_URL
     }]

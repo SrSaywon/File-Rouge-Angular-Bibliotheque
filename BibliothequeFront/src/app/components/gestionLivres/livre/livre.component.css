@@ -1,7 +1,5 @@
 mat-card {
-    width: 40%;
     display: flex;
-    margin : auto;
     margin-top: 10px;
     padding: 10px;
     align-items: end;
@@ -9,6 +7,7 @@ mat-card {
 
 mat-card-content {
     align-self: start;
+    width: 600px;
 }
 
 mat-card-header {
@@ -16,4 +15,17 @@ mat-card-header {
     font-family: 'Protest Riot', sans-serif;
 }
 
+hr {
+    width: 100%;
+}
 
+.butt {
+    align-self: start;
+    display: flex;
+    margin-top: 5px;
+}
+
+button {
+    margin-left: 5px;
+    width: 15vh;
+}

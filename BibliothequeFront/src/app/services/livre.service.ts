@@ -16,4 +16,11 @@ export class LivreService {
     //return this.http.get<Livre[]>(`${this.baseUrl}/Livres`);
     return this.http.get<Livre[]>(this.baseUrl + '/Livres');
   }
+
+
+
+  getById(id: number): Observable<Livre> {
+    return this.http.get<Livre>(`${this.baseUrl}/Livres/${id}`)
+  }
+
 }
