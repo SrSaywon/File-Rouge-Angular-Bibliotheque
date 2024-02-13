@@ -4,6 +4,7 @@ import { AjouterLivreComponent } from "../gestionLivres/ajouter-livre/ajouter-li
 import { Observable } from 'rxjs';
 import { Livre } from '../../Models/livre';
 import { LivreService } from '../../services/livre.service';
+
 import {
     MatCard,
     MatCardActions,
@@ -16,11 +17,13 @@ import {
 import {AsyncPipe, DatePipe, NgForOf, NgIf, UpperCasePipe} from "@angular/common";
 import {MatButtonModule} from '@angular/material/button';
 
+
 @Component({
     selector: 'app-livre',
     standalone: true,
     templateUrl: './livre.component.html',
     styleUrl: './livre.component.css',
+
     imports: [RechercheLivreComponent,
         AjouterLivreComponent,
         MatCard,
@@ -32,6 +35,7 @@ import {MatButtonModule} from '@angular/material/button';
         MatCardTitle,
         MatButtonModule,
         AsyncPipe, DatePipe, NgForOf, NgIf, UpperCasePipe]
+
 })
 export class LivreComponent {
     constructor(private livreService: LivreService) {
