@@ -1,11 +1,11 @@
 import { Livre } from "./livre";
 
 export interface Auteur {
-    id : number;
+    id : number | null;
     nom : string;
     prenom: string;
     email: string;
-    telephone: string; 
-    grade: string;
-    livres: Livre[];
+    telephone: string|null; 
+    grade: string | null;
+    livres: Livre[] | null;
 }
