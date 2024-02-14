@@ -17,10 +17,12 @@ import { UpperCasePipe } from '@angular/common';
   styleUrl: './modifier-auteur.component.css'
 })
 export class ModifierAuteurComponent implements OnDestroy, OnInit {
+
  id!:number;
  auteur! :Auteur;
  private sub:any;
   private sub2:any;
+
   constructor(private route : ActivatedRoute, private service:AuteurService,private router: Router ){}
   async ngOnInit(){
     this.sub = this.route.params.subscribe(params =>{

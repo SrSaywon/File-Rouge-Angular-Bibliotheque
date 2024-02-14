@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   MatCard,
   MatCardHeader,
@@ -18,10 +18,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './supprimer-livre.component.css'
 })
 
-export class SupprimerLivreComponent {
+export class SupprimerLivreComponent implements OnInit, OnDestroy {
 
   id!: number;
   private sub: any;
+  private sub2: any;
+
 
   constructor(private route: ActivatedRoute, private livreService: LivreService, private router: Router) {}
   
@@ -31,12 +33,13 @@ export class SupprimerLivreComponent {
     });
   }
 
-  ngOnDestroy() {
-    this.sub.unsubscribe();
-  }
-
+  
   Delete() {
     this.livreService.deleteById(this.id).subscribe();
     this.router.navigate(['menu-livres/livres'])
+  }
+  
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 }

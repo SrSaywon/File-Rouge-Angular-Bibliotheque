@@ -1,1 +1,41 @@
-<p>modifier-livre works!</p>
+<div class="formulaire">
+    <div class="entete">
+        <h2>Nouveau Livre:</h2>
+        <button mat-fab color="primary" aria-label="Ajouter Auteur"(click)="retour()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <form method="post" (ngSubmit)="onClickButton()" [formGroup]="ajouterLivresForm">
+        <mat-form-field>
+            <mat-label>Titre</mat-label>
+            <input matInput placeholder="Titre" formControlName="titre">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Nombre de pages</mat-label>
+            <input matInput placeholder="Nombre de pages" formControlName="nbPages">
+        </mat-form-field>
+        <div  *ngIf="auteurs$ | async as auteurs;">
+            <mat-form-field class="divSelect">
+                <mat-label>Selectionner un auteur</mat-label>
+                    <mat-select formControlName="auteurId" [(value)]="selectedAuteur">
+                        <div *ngFor="let auteur of auteurs">
+                            <mat-option  value="{{auteur.id}}">{{auteur.prenom}} {{auteur.nom}}</mat-option>
+                        </div>
+                    </mat-select>
+            </mat-form-field>
+        </div>
+        <button class="ajouterBtn" mat-raised-button color="accent" (click)="redAddAuthorBtn()">Ajouter un auteur</button>
+        <div *ngIf="domaines$ | async as domaines;">
+            <mat-form-field class="divSelect">
+                <mat-label>Selectionner un domaine</mat-label>
+                <mat-select formControlName="domaineId" [(value)]="selectedDomaine">
+                    <div *ngFor="let domaine of domaines">
+                        <mat-option value="{{domaine.id}}">{{domaine.nom}}</mat-option>
+                    </div>
+                </mat-select>
+            </mat-form-field>
+            <button class="ajouterBtn" mat-raised-button color="accent" (click)="redAddDomaineBtn()">Ajouter un domaine</button>
+        </div>
+        <button type="submit" mat-raised-button color="primary">Valider</button>
+    </form>
+</div>
