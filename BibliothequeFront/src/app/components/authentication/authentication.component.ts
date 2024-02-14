@@ -4,10 +4,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-authentication',
@@ -18,13 +18,22 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class AuthenticationComponent {
   hide = true;
-
   profileForm = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
   });
 
+  constructor(private authenticationService: AuthenticationService, private router : Router){}
+
   onClickButton() {
-    const login = {"username": `${this.profileForm.value.username}`, "password": `${this.profileForm.value.password}`}
-  }  
+    this.authenticationService
+      .login(this.profileForm.value.username!, this.profileForm.value.password!)
+      .subscribe({next: t => localStorage.setItem("token", JSON.stringify(t)),
+        error: err => {console.log(err)},
+        complete: () => {
+        this.router.navigate([""]);
+
+        }
+  });
+  }
 }
