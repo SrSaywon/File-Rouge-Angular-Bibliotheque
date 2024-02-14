@@ -4,6 +4,7 @@ import {MatToolbar} from "@angular/material/toolbar";
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
+import {AuthenticationService} from "./services/authentication.service";
 
 @Component({
   selector: 'app-root',
@@ -14,4 +15,11 @@ import {MatMenuModule} from '@angular/material/menu';
 })
 export class AppComponent {
   title = 'BibliothequeFront';
+  constructor(private authService: AuthenticationService){
+
+  }
+
+  logOut(){
+    this.authService.logOut();
+  }
 }
