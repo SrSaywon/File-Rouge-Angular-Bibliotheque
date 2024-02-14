@@ -22,6 +22,9 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
   styleUrl: './ajouter-livres.component.css'
 })
 export class AjouterLivresComponent {
+click() {
+  console.log(this.selected);
+}
 
   constructor(private route: Router, private livreService: LivreService, private auteurService: AuteurService, private domaineService: DomaineService) {}
 
@@ -33,16 +36,16 @@ export class AjouterLivresComponent {
   ajouterLivresForm = new FormGroup({
     titre: new FormControl(''),
     nbPages: new FormControl(''),
-    auteur: new FormControl(''),
-    domaine: new FormControl('')
+    auteurId: new FormControl(''),
+    domaineId: new FormControl('')
   });
   
   onClickButton() {
     const newLivre: any= {
       titre: `${this.ajouterLivresForm.value.titre}`,
       nbPages: `${this.ajouterLivresForm.value.nbPages}`,
-      auteurId: `${this.ajouterLivresForm.value.auteur}`,
-      domaineId: `${this.ajouterLivresForm.value.domaine}`
+      auteurId: `${this.ajouterLivresForm.value.auteurId}`,
+      domaineId: `${this.ajouterLivresForm.value.domaineId}`
     }
     this.livreService.addLivre(newLivre).subscribe(livre => console.log("finis:", livre));
     this.route.navigate(['menu-livres/livres'])
