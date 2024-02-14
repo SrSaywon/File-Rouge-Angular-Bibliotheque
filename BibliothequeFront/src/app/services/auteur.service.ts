@@ -24,6 +24,8 @@ export class AuteurService {
   deleteAuteur(id:number){
     return this.http.delete<Auteur>(`${this.baseUrl}/Auteurs/${id}`);
   }
-
+  getById(id: number): Observable<Auteur> {
+    return this.http.get<Auteur>(`${this.baseUrl}/Auteurs/${id}`)
+  }
 
 }
