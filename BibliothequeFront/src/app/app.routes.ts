@@ -13,6 +13,7 @@ import { LivreDetailleComponent } from './components/gestionLivres/livre-detaill
 import { DomaineService } from './services/domaine.service';
 import { ListeDomaineComponent } from './components/gestionDomaines/liste-domaine/liste-domaine.component';
 import { AjoutDomaineComponent } from './components/gestionDomaines/ajout-domaine/ajout-domaine.component';
+import { ModifierAuteurComponent } from './components/gestionAuteurs/modifier-auteur/modifier-auteur.component';
 
 
 export const routes: Routes = [
@@ -37,5 +38,6 @@ export const routes: Routes = [
   {path: 'domaine', component: ListeDomaineComponent},
   {path: 'ajouter-domaine', component: AjoutDomaineComponent},
   {path: 'ajouter-auteurs', component: AjouterAuteurComponent},
+  {path: 'modifier-auteur/:id', component: ModifierAuteurComponent},
   {path: '**', redirectTo: '/'}
 ];

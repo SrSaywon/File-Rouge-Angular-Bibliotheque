@@ -1,0 +1,19 @@
+form{
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+}
+.formulaire{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.entete{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    align-content: center;
+    margin: 3px 0 3px 0
+}

@@ -30,4 +30,9 @@ export class ListAuteurComponent {
       this.router.navigate(["auteurs"]);
     }
   }
+
+  editeAuteur(id:number|null){
+    const path:string =`modifier-auteur/${id}` 
+    this.router.navigate([path]);
+  }
 }

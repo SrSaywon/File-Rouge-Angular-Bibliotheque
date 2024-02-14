@@ -1,1 +1,28 @@
-<p>modifier-auteur works!</p>
+
+<div class="formulaire">
+    <div class="entete">
+        <h2>Modifier Autheur: {{auteur.nom |uppercase }}, {{auteur.prenom}}</h2>
+        <button mat-fab color="primary" aria-label="Ajouter Auteur"(click)="retour()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <form method="post" (ngSubmit)="onClickButton()" [formGroup]="modifierAutheurForm">
+        <mat-form-field>
+            <mat-label>Nom</mat-label>
+            <input matInput value="Sushi" formControlName="nom" >
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Prenom</mat-label>
+            <input matInput  formControlName="prenom">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Courriel</mat-label>
+            <input matInput  formControlName="email">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Telephone</mat-label>
+            <input matInput  formControlName="telephone">
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary">Valider</button>
+    </form>
+</div>
