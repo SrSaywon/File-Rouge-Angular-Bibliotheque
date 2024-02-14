@@ -8,20 +8,20 @@
     </div>
     <form method="post" (ngSubmit)="onClickButton()" [formGroup]="modifierAutheurForm">
         <mat-form-field>
-            <mat-label>Nom</mat-label>
-            <input matInput value="Sushi" formControlName="nom" >
+            <mat-label>Nom: {{auteur.nom}}</mat-label>
+            <input matInput placeholder={{auteur.nom}} formControlName="nom" value="bidon">
         </mat-form-field>
         <mat-form-field>
-            <mat-label>Prenom</mat-label>
-            <input matInput  formControlName="prenom">
+            <mat-label>Prenom: {{auteur.prenom}} </mat-label>
+            <input matInput placeholder={{auteur.prenom}} formControlName="prenom">
         </mat-form-field>
         <mat-form-field>
-            <mat-label>Courriel</mat-label>
-            <input matInput  formControlName="email">
+            <mat-label>Courriel: {{auteur.email}}</mat-label>
+            <input matInput placeholder={{auteur.email}}  formControlName="email">
         </mat-form-field>
         <mat-form-field>
-            <mat-label>Telephone</mat-label>
-            <input matInput  formControlName="telephone">
+            <mat-label>Telephone: {{auteur.telephone}}</mat-label>
+            <input matInput placeholder={{auteur.telephone}} formControlName="telephone">
         </mat-form-field>
         <button type="submit" mat-raised-button color="primary">Valider</button>
     </form>
