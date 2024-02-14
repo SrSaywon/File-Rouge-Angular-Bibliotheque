@@ -1,4 +1,6 @@
+
 import { Component, OnDestroy, OnInit } from '@angular/core';
+
 import { ActivatedRoute } from '@angular/router';
 import { LivreService } from '../../../services/livre.service';
 import { Livre } from '../../../Models/livre';
@@ -15,7 +17,7 @@ import {
 import {AsyncPipe, DatePipe, NgForOf, NgIf, UpperCasePipe} from "@angular/common";
 import {MatButtonModule} from '@angular/material/button';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import {async, Observable} from 'rxjs';
 
 @Component({
   selector: 'app-livre-detaille',
@@ -32,22 +34,24 @@ import { Observable } from 'rxjs';
   templateUrl: './livre-detaille.component.html',
   styleUrl: './livre-detaille.component.css'
 })
-export class LivreDetailleComponent implements OnDestroy, OnInit {
+
+export class LivreDetailleComponent implements OnDestroy, OnInit{
+
   id!: number;
   private sub: any;
 
   constructor(private route: ActivatedRoute, private livreService: LivreService) {}
-  
+
 
   livreUnique!: Livre;
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id'];
-    });
-    this.livreService.getById(this.id).subscribe( livreUnique => this.livreUnique = livreUnique)
-  }
 
+    });
+    this.livreService.getById(this.id).subscribe( livreUnique => {this.livreUnique =livreUnique; console.log("passage");});
+  }
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
