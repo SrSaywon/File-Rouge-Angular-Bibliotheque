@@ -5,7 +5,7 @@ import { CreditComponent } from './components/credit/credit.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
 import {SupprimerLivreComponent} from "./components/gestionLivres/supprimer-livre/supprimer-livre.component";
 import {ModifierLivreComponent} from "./components/gestionLivres/modifier-livre/modifier-livre.component";
-import {AjouterLivreComponent} from "./components/gestionLivres/ajouter-livre/ajouter-livre.component";
+import { AjouterLivresComponent } from './components/gestionLivres/ajouter-livres/ajouter-livres.component';
 import { ListAuteurComponent } from './components/gestionAuteurs/list-auteur/list-auteur.component';
 import { AjouterAuteurComponent } from './components/gestionAuteurs/ajouter-auteur/ajouter-auteur.component';
 import {MenuLivreComponent} from "./components/gestionLivres/menu-livre/menu-livre.component";
@@ -29,7 +29,7 @@ export const routes: Routes = [
         {path: 'livres',
           component: LivreComponent},
         {path:'ajouter',
-          component: AjouterLivreComponent}]},
+          component: AjouterLivresComponent}]},
     {path: 'auteurs', component: ListAuteurComponent},
     {path: 'ajouter-auteurs', component: AjouterAuteurComponent},
     {path: '**', redirectTo: '/'}
