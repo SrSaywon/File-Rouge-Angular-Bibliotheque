@@ -1,24 +1,30 @@
 
 <div class="formulaire">
     <div class="entete">
-        <h2>Nouveau Autheur:</h2>
+        <h2>Nouveau Livre:</h2>
         <button mat-fab color="primary" aria-label="Ajouter Auteur"(click)="retour()">
             <mat-icon>close</mat-icon>
         </button>
     </div>
-    <form method="post" (ngSubmit)="onClickButton()" [formGroup]="ajouterAutheurForm">
+    <form method="post" (ngSubmit)="onClickButton()" [formGroup]="ajouterLivresForm">
         <mat-form-field>
-            <mat-label>Nom</mat-label>
-            <input matInput placeholder="Nom" formControlName="nom">
+            <mat-label>Titre</mat-label>
+            <input matInput placeholder="Titre" formControlName="titre">
         </mat-form-field>
         <mat-form-field>
-            <mat-label>Prenom</mat-label>
-            <input matInput placeholder="Prenom" formControlName="prenom">
+            <mat-label>Nombre de pages</mat-label>
+            <input matInput placeholder="Nombre de pages" formControlName="nbPages">
         </mat-form-field>
         <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="Courriel" formControlName="email">
+            <mat-label>auteurId</mat-label>
+            <input matInput placeholder="Auteur" formControlName="auteur">
         </mat-form-field>
+        <button class="ajouterBtn" mat-raised-button color="accent" (click)="redAddAuthorBtn()">Ajouter un auteur</button>
+        <mat-form-field>
+            <mat-label>domaineId</mat-label>
+            <input matInput placeholder="Domaine" formControlName="domaine">
+        </mat-form-field>
+        <button class="ajouterBtn" mat-raised-button color="accent" (click)="redAddDomaineBtn()">Ajouter un domaine</button>
         <button type="submit" mat-raised-button color="primary">Valider</button>
     </form>
 </div>

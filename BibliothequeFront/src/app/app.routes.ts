@@ -10,27 +10,32 @@ import { ListAuteurComponent } from './components/gestionAuteurs/list-auteur/lis
 import { AjouterAuteurComponent } from './components/gestionAuteurs/ajouter-auteur/ajouter-auteur.component';
 import {MenuLivreComponent} from "./components/gestionLivres/menu-livre/menu-livre.component";
 import { LivreDetailleComponent } from './components/gestionLivres/livre-detaille/livre-detaille.component';
+import { DomaineService } from './services/domaine.service';
+import { ListeDomaineComponent } from './components/gestionDomaines/liste-domaine/liste-domaine.component';
+import { AjoutDomaineComponent } from './components/gestionDomaines/ajout-domaine/ajout-domaine.component';
 
 
 export const routes: Routes = [
-    {path: '', pathMatch: 'full', redirectTo: '/home'},
-    {path: 'home', component: HomeComponent},
-    {path: 'credit', component: CreditComponent},
-    {path: 'logIn', component: AuthenticationComponent},
-    {path: 'menu-livres',
-      component: MenuLivreComponent,
-      children:[
-        {path: 'livres/:id', 
-          component: LivreDetailleComponent},
-        {path: 'supprimer/:id',
-          component: SupprimerLivreComponent},
-        {path: 'modifier/:id',
-          component: ModifierLivreComponent},
-        {path: 'livres',
-          component: LivreComponent},
-        {path:'ajouter',
-          component: AjouterLivresComponent}]},
-    {path: 'auteurs', component: ListAuteurComponent},
-    {path: 'ajouter-auteurs', component: AjouterAuteurComponent},
-    {path: '**', redirectTo: '/'}
+  {path: '', pathMatch: 'full', redirectTo: '/home'},
+  {path: 'home', component: HomeComponent},
+  {path: 'credit', component: CreditComponent},
+  {path: 'logIn', component: AuthenticationComponent},
+  {path: 'menu-livres',
+    component: MenuLivreComponent,
+    children:[
+      {path: 'livres/:id', 
+        component: LivreDetailleComponent},
+      {path: 'supprimer/:id',
+        component: SupprimerLivreComponent},
+      {path: 'modifier/:id',
+        component: ModifierLivreComponent},
+      {path: 'livres',
+        component: LivreComponent},
+      {path:'ajouter',
+        component: AjouterLivresComponent}]},
+  {path: 'auteurs', component: ListAuteurComponent},
+  {path: 'domaine', component: ListeDomaineComponent},
+  {path: 'ajouter-domaine', component: AjoutDomaineComponent},
+  {path: 'ajouter-auteurs', component: AjouterAuteurComponent},
+  {path: '**', redirectTo: '/'}
 ];

@@ -1,0 +1,20 @@
+<div class="formulaire">
+    <div class="entete">
+        <h2>Nouveau Domaine:</h2>
+        <button mat-fab color="primary" aria-label="Ajouter Domaine"(click)="retour()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <form method="post" (ngSubmit)="onClickButton()" [formGroup]="ajouterDomaineForm">
+        <mat-form-field>
+            <mat-label>Nom</mat-label>
+            <input matInput placeholder="Nom" formControlName="nom">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="Description" formControlName="description">
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary">Valider</button>
+    </form>
+</div>
+

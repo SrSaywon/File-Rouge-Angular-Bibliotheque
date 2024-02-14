@@ -41,4 +41,5 @@ export class AjouterAuteurComponent {
   retour(){
     this.router.navigate(["auteurs"]);
   }
+  
 }

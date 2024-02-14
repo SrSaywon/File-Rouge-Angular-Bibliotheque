@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { MatButton, MatFabButton } from '@angular/material/button';
 import { Auteur } from '../../../Models/auteur';
 import { MatIcon } from '@angular/material/icon';
+import { LivreService } from '../../../services/livre.service';
 
 @Component({
   selector: 'app-ajouter-livres',
@@ -16,17 +17,36 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class AjouterLivresComponent {
 
-  ajouterAutheurForm = new FormGroup({
-    nom: new FormControl(''),
-    prenom: new FormControl(''),
-    email: new FormControl('')
+  constructor(private route: Router, private livreService: LivreService) {}
+
+  
+  ajouterLivresForm = new FormGroup({
+    titre: new FormControl(''),
+    nbPages: new FormControl(''),
+    auteur: new FormControl(''),
+    domaine: new FormControl('')
   });
   
-onClickButton() {
-throw new Error('Method not implemented.');
-}
-retour() {
-throw new Error('Method not implemented.');
-}
+  onClickButton() {
+    const newLivre: any= {
+      titre: `${this.ajouterLivresForm.value.titre}`,
+      nbPages: `${this.ajouterLivresForm.value.nbPages}`,
+      auteurId: `${this.ajouterLivresForm.value.auteur}`,
+      domaineId: `${this.ajouterLivresForm.value.domaine}`
+    }
+    this.livreService.addLivre(newLivre).subscribe(livre => console.log("finis:", livre));
+    this.route.navigate(['menu-livres/livres'])
+  }
 
+  retour() {
+    this.route.navigate(['menu-livres/livres']);
+  }
+
+  redAddDomaineBtn() {
+    this.route.navigate(["ajouter-auteurs"]);
+  }
+  redAddAuthorBtn() {
+    this.route.navigate(["ajouter-auteurs"]);
+  }
+  
 }

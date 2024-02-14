@@ -1,10 +1,14 @@
+.container {
+    width: 50%;
+    margin: auto;
+}
 
 .sort-header{
     display: flex;
     justify-content: space-between;
     margin:3%;
 }
-.domaine-container.informations{
+.auteur-container.informations{
     display: flex;
     flex-direction: row;
     justify-content: space-between;

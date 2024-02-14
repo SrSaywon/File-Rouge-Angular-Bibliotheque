@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="sort-header">
+        <h2>Domaines:</h2>
+        <button mat-fab color="primary" aria-label="Ajouter Domaine"(click)="addDomaine()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+    <ng-container  *ngIf="domaine$ | async as domaine;" appHoverHighlight>
+        <mat-card *ngFor="let domaine of domaine">
+            <div class="domaine-container">
+                <mat-card-header>
+                    <mat-card-title>{{domaine.nom}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    Description : {{domaine.description}}
+                </mat-card-content>
+            </div> 
+        </mat-card>
+    </ng-container>
+</div>
