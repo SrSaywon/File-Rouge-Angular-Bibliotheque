@@ -22,10 +22,6 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
   styleUrl: './ajouter-livres.component.css'
 })
 export class AjouterLivresComponent {
-click() {
-  console.log(this.selectedAuteur);
-  console.log(this.selectedDomaine);
-}
 
   constructor(private route: Router, private livreService: LivreService, private auteurService: AuteurService, private domaineService: DomaineService) {}
 
@@ -49,7 +45,7 @@ click() {
       auteurId: `${this.ajouterLivresForm.value.auteurId}`,
       domaineId: `${this.ajouterLivresForm.value.domaineId}`
     }
-    this.livreService.addLivre(newLivre).subscribe(livre => console.log("finis:", livre));
+    this.livreService.addLivre(newLivre).subscribe();
     this.route.navigate(['menu-livres/livres'])
   }
 
