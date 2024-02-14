@@ -15,10 +15,14 @@ form{
     justify-content: space-between;
     width: 600px;
     align-content: center;
-    margin: 3px 0 3px 0
+    margin: 15px 0 3px 0
 }
 
 .ajouterBtn {
     width: 30%;
     margin-bottom: 30px;
+}
+
+.divSelect {
+    width: 100% ;
 }

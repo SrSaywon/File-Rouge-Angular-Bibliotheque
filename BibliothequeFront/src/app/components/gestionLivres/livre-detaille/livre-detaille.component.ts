@@ -1,4 +1,6 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+
+import { Component, OnDestroy, OnInit } from '@angular/core';
+
 import { ActivatedRoute } from '@angular/router';
 import { LivreService } from '../../../services/livre.service';
 import { Livre } from '../../../Models/livre';
@@ -32,11 +34,14 @@ import {async, Observable} from 'rxjs';
   templateUrl: './livre-detaille.component.html',
   styleUrl: './livre-detaille.component.css'
 })
+
 export class LivreDetailleComponent implements OnDestroy, OnInit{
+
   id!: number;
   private sub: any;
 
   constructor(private route: ActivatedRoute, private livreService: LivreService) {}
+
 
   livreUnique!: Livre;
 

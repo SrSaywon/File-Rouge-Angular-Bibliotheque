@@ -15,16 +15,29 @@
             <mat-label>Nombre de pages</mat-label>
             <input matInput placeholder="Nombre de pages" formControlName="nbPages">
         </mat-form-field>
-        <mat-form-field>
-            <mat-label>auteurId</mat-label>
-            <input matInput placeholder="Auteur" formControlName="auteur">
-        </mat-form-field>
+        <div  *ngIf="auteurs$ | async as auteurs;">
+            <mat-form-field class="divSelect">
+                <mat-label>Selectionner un auteur</mat-label>
+                    <mat-select formControlName="auteurId" [(value)]="selectedAuteur">
+                        <div *ngFor="let auteur of auteurs">
+                            <mat-option  value="{{auteur.id}}">{{auteur.prenom}} {{auteur.nom}}</mat-option>
+                        </div>
+                    </mat-select>
+            </mat-form-field>
+        </div>
         <button class="ajouterBtn" mat-raised-button color="accent" (click)="redAddAuthorBtn()">Ajouter un auteur</button>
-        <mat-form-field>
-            <mat-label>domaineId</mat-label>
-            <input matInput placeholder="Domaine" formControlName="domaine">
-        </mat-form-field>
-        <button class="ajouterBtn" mat-raised-button color="accent" (click)="redAddDomaineBtn()">Ajouter un domaine</button>
+        <div *ngIf="domaines$ | async as domaines;">
+            <mat-form-field class="divSelect">
+                <mat-label>Selectionner un domaine</mat-label>
+                <mat-select formControlName="domaineId" [(value)]="selectedDomaine">
+                    <div *ngFor="let domaine of domaines">
+                        <mat-option value="{{domaine.id}}">{{domaine.nom}}</mat-option>
+                    </div>
+                </mat-select>
+            </mat-form-field>
+            <button class="ajouterBtn" mat-raised-button color="accent" (click)="redAddDomaineBtn()">Ajouter un domaine</button>
+        </div>
         <button type="submit" mat-raised-button color="primary">Valider</button>
     </form>
 </div>
+<button (click)="click()">tap</button>
