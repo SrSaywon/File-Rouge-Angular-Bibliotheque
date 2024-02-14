@@ -1,1 +1,24 @@
-<p>ajouter-livres works!</p>
+
+<div class="formulaire">
+    <div class="entete">
+        <h2>Nouveau Autheur:</h2>
+        <button mat-fab color="primary" aria-label="Ajouter Auteur"(click)="retour()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <form method="post" (ngSubmit)="onClickButton()" [formGroup]="ajouterAutheurForm">
+        <mat-form-field>
+            <mat-label>Nom</mat-label>
+            <input matInput placeholder="Nom" formControlName="nom">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Prenom</mat-label>
+            <input matInput placeholder="Prenom" formControlName="prenom">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Courriel" formControlName="email">
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary">Valider</button>
+    </form>
+</div>
