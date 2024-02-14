@@ -1,0 +1,28 @@
+form{
+    display:flex;
+    flex-direction: column;
+    width: 600px;
+}
+.formulaire{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.entete{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 600px;
+    align-content: center;
+    margin: 15px 0 3px 0
+}
+
+.ajouterBtn {
+    width: 30%;
+    margin-bottom: 30px;
+}
+
+.divSelect {
+    width: 100% ;
+}

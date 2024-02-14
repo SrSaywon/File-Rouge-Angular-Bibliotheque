@@ -12,11 +12,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   styleUrl: './recherche-livre.component.css'
 })
 export class RechercheLivreComponent {
-
-
-
   search() {
 
   }
-
 }

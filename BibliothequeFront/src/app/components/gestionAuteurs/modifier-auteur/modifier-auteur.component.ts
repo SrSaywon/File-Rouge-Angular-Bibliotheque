@@ -17,10 +17,10 @@ import { UpperCasePipe } from '@angular/common';
   styleUrl: './modifier-auteur.component.css'
 })
 export class ModifierAuteurComponent implements OnDestroy, OnInit {
- id!:number;
- auteur!:Auteur;
- private sub:any;
- modifierAutheurForm = new FormGroup({
+id!:number;
+auteur!:Auteur;
+private sub:any;
+modifierAutheurForm = new FormGroup({
   nom: new FormControl(`${this.auteur.nom}`),
   prenom: new FormControl(`${this.auteur.prenom}`),
   email: new FormControl(`${this.auteur.email}`),

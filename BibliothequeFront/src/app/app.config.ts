@@ -10,7 +10,7 @@ import {authInterceptor} from "./interceptors/auth.interceptor";
 
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideAnimationsAsync(), provideHttpClient(withInterceptors([authInterceptor])),
+  providers: [provideRouter(routes), provideAnimationsAsync(), provideHttpClient(),
     {
       provide: BASE_API_URL,
       useValue: environment.BASE_API_URL

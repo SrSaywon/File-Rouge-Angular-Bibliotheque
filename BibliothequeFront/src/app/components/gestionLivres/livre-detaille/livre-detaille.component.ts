@@ -16,8 +16,6 @@ import {
 } from "@angular/material/card";
 import {AsyncPipe, DatePipe, NgForOf, NgIf, UpperCasePipe} from "@angular/common";
 import {MatButtonModule} from '@angular/material/button';
-import { Router } from '@angular/router';
-import {async, Observable} from 'rxjs';
 
 @Component({
   selector: 'app-livre-detaille',
@@ -39,6 +37,7 @@ export class LivreDetailleComponent implements OnDestroy, OnInit{
 
   id!: number;
   private sub: any;
+  private sub2: any;
 
   constructor(private route: ActivatedRoute, private livreService: LivreService) {}
 
@@ -47,12 +46,14 @@ export class LivreDetailleComponent implements OnDestroy, OnInit{
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id'];
-
-    });
-    this.livreService.getById(this.id).subscribe( livreUnique => {this.livreUnique =livreUnique; console.log("passage");});
+    this.id = +params['id'];
+    
+  });
+  this.sub2 = this.livreService.getById(this.id).subscribe( livreUnique => {this.livreUnique =livreUnique; console.log("passage");});
+  
   }
   ngOnDestroy() {
     this.sub.unsubscribe();
+    this.sub2.unsubscribe();
   }
 }

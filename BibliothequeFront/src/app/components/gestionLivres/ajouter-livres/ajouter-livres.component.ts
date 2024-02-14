@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -21,12 +21,14 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
   templateUrl: './ajouter-livres.component.html',
   styleUrl: './ajouter-livres.component.css'
 })
-export class AjouterLivresComponent {
+export class AjouterLivresComponent implements OnDestroy{
 
   constructor(private route: Router, private livreService: LivreService, private auteurService: AuteurService, private domaineService: DomaineService) {}
 
   domaines$: Observable<Domaine[]> = this.domaineService.getAll();
   auteurs$: Observable<Auteur[]> = this.auteurService.getAll();
+
+  sub: any;
 
   selectedAuteur = '';
   selectedDomaine = '';
@@ -60,4 +62,7 @@ export class AjouterLivresComponent {
     this.route.navigate(["ajouter-auteurs"]);
   }
   
+  ngOnDestroy() {
+    
+  }
 }
