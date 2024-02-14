@@ -20,6 +20,8 @@ export class AuteurService {
 addAuteur(auteur: Auteur): Observable<Auteur> {
   return this.http.post<Auteur>(`${this.baseUrl}/Auteurs`, auteur);
 }
- 
+ deleteAuteur(id:number){
+  return this.http.delete<Auteur>(`${this.baseUrl}/Auteurs/${id}`);
+ }
 
 }
