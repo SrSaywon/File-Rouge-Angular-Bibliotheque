@@ -36,7 +36,7 @@ export class SupprimerLivreComponent {
   }
 
   Delete() {
-    this.livreService.deleteById(this.id);
+    this.livreService.deleteById(this.id).subscribe();
     this.router.navigate(['menu-livres/livres'])
   }
 }

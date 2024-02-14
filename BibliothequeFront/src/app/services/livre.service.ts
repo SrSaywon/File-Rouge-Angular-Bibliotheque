@@ -21,11 +21,11 @@ export class LivreService {
     return this.http.get<Livre>(`${this.baseUrl}/Livres/${id}`)
   }
 
-  deleteById(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/Livres/${id}`)
+  deleteById(id: number) {
+    return this.http.delete<Livre>(`${this.baseUrl}/Livres/${id}`)
   }
 
-  addAuteur(livre: Livre): Observable<Livre> {
+  addLivre(livre: Livre): Observable<Livre> {
     return this.http.post<Livre>(`${this.baseUrl}/Livres`, livre);
   }
 

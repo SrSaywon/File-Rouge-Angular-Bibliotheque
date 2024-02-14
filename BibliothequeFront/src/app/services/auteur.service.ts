@@ -18,11 +18,11 @@ export class AuteurService {
   
   /** POST: add a new hero to the database */
   addAuteur(auteur: Auteur): Observable<Auteur> {
-  return this.http.post<Auteur>(`${this.baseUrl}/Auteurs`, auteur);
-}
- deleteAuteur(id:number){
-  return this.http.delete<Auteur>(`${this.baseUrl}/Auteurs/${id}`);
- }
+    return this.http.post<Auteur>(`${this.baseUrl}/Auteurs`, auteur);
+  }
+  deleteAuteur(id:number){
+    return this.http.delete<Auteur>(`${this.baseUrl}/Auteurs/${id}`);
+  }
 
 
 }
