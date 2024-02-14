@@ -18,7 +18,7 @@
         <div  *ngIf="auteurs$ | async as auteurs;">
             <mat-form-field class="divSelect">
                 <mat-label>Selectionner un auteur</mat-label>
-                    <mat-select formControlName="auteurId" [(value)]="selected">
+                    <mat-select formControlName="auteurId" [(value)]="selectedAuteur">
                         <div *ngFor="let auteur of auteurs">
                             <mat-option  value="{{auteur.id}}">{{auteur.prenom}} {{auteur.nom}}</mat-option>
                         </div>
@@ -29,14 +29,14 @@
         <div *ngIf="domaines$ | async as domaines;">
             <mat-form-field class="divSelect">
                 <mat-label>Selectionner un domaine</mat-label>
-                <mat-select formControlName="domaineId" [(value)]="selected">
+                <mat-select formControlName="domaineId" [(value)]="selectedDomaine">
                     <div *ngFor="let domaine of domaines">
                         <mat-option value="{{domaine.id}}">{{domaine.nom}}</mat-option>
                     </div>
                 </mat-select>
             </mat-form-field>
+            <button class="ajouterBtn" mat-raised-button color="accent" (click)="redAddDomaineBtn()">Ajouter un domaine</button>
         </div>
-        <button class="ajouterBtn" mat-raised-button color="accent" (click)="redAddDomaineBtn()">Ajouter un domaine</button>
         <button type="submit" mat-raised-button color="primary">Valider</button>
     </form>
 </div>

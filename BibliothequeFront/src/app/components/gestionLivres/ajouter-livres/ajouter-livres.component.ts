@@ -23,7 +23,8 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 })
 export class AjouterLivresComponent {
 click() {
-  console.log(this.selected);
+  console.log(this.selectedAuteur);
+  console.log(this.selectedDomaine);
 }
 
   constructor(private route: Router, private livreService: LivreService, private auteurService: AuteurService, private domaineService: DomaineService) {}
@@ -31,7 +32,8 @@ click() {
   domaines$: Observable<Domaine[]> = this.domaineService.getAll();
   auteurs$: Observable<Auteur[]> = this.auteurService.getAll();
 
-  selected = '';
+  selectedAuteur = '';
+  selectedDomaine = '';
   
   ajouterLivresForm = new FormGroup({
     titre: new FormControl(''),
