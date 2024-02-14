@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -14,14 +14,14 @@ import { MatIcon } from '@angular/material/icon';
   templateUrl: './ajouter-auteur.component.html',
   styleUrl: './ajouter-auteur.component.css'
 })
-export class AjouterAuteurComponent {
+export class AjouterAuteurComponent implements OnDestroy {
   
   ajouterAutheurForm = new FormGroup({
     nom: new FormControl(''),
     prenom: new FormControl(''),
     email: new FormControl('')
   });
-
+  private sub: any;
   constructor(private auteurService:AuteurService,private router:Router){
 
   }
@@ -31,13 +31,15 @@ export class AjouterAuteurComponent {
       prenom:`${this.ajouterAutheurForm.value.prenom}`, 
       email:`${this.ajouterAutheurForm.value.email}`
     }
-    this.auteurService
+    this.sub = this.auteurService
       .addAuteur(newAuteur)
       .subscribe(auteur => console.log("finis:",auteur));
     
       this.router.navigate(["auteurs"]);
   }
-
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+  }
   retour(){
     this.router.navigate(["auteurs"]);
   }

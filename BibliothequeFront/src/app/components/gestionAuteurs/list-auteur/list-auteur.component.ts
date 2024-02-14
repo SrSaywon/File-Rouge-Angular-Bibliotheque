@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Auteur } from '../../../Models/auteur';
 import { AuteurService } from '../../../services/auteur.service';
 import { Observable } from 'rxjs';
@@ -15,9 +15,9 @@ import {MatChipsModule} from '@angular/material/chips';
   templateUrl: './list-auteur.component.html',
   styleUrl: './list-auteur.component.css'
 })
-export class ListAuteurComponent {
+export class ListAuteurComponent{
   auteurs$: Observable<Auteur[]> = this.auteurService.getAll();
-
+  private sub:any;
   constructor(private auteurService:AuteurService, private router : Router){}
 
   addAuteur():void{
@@ -25,12 +25,12 @@ export class ListAuteurComponent {
   }
   deleteAuteur(id:number|null){
     if(confirm("Etes vous sur?") && id != null){
-      this.auteurService.deleteAuteur(id).subscribe();
+      this.sub =this.auteurService.deleteAuteur(id).subscribe();
       console.log("here");
       this.router.navigate(["auteurs"]);
     }
   }
-
+  
   editeAuteur(id:number|null){
     const path:string =`modifier-auteur/${id}` 
     this.router.navigate([path]);

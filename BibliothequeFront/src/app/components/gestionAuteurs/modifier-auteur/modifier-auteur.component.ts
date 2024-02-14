@@ -18,30 +18,31 @@ import { UpperCasePipe } from '@angular/common';
 })
 export class ModifierAuteurComponent implements OnDestroy, OnInit {
  id!:number;
- auteur!:Auteur;
+ auteur! :Auteur;
  private sub:any;
- modifierAutheurForm = new FormGroup({
-  nom: new FormControl(`${this.auteur.nom}`),
-  prenom: new FormControl(`${this.auteur.prenom}`),
-  email: new FormControl(`${this.auteur.email}`),
-  telephone : new FormControl(`${this.auteur.telephone}`)
-});
+  private sub2:any;
   constructor(private route : ActivatedRoute, private service:AuteurService,private router: Router ){}
-  ngOnInit(){
+  async ngOnInit(){
     this.sub = this.route.params.subscribe(params =>{
       this.id = +params['id'];
     });
-    this.service.getById(this.id).subscribe(auteur => {this.auteur = auteur;console.log(JSON.stringify(this.auteur));});
+   this.sub2 = this.service.getById(this.id).subscribe(auteur => {this.auteur = auteur;console.log(JSON.stringify(this.auteur));});
     console.log(JSON.stringify(this.auteur));
   }
-
+  modifierAutheurForm = new FormGroup({
+    nom: new FormControl(``),
+    prenom: new FormControl(``),
+    email: new FormControl(``),
+    telephone : new FormControl(``)
+  });
   ngOnDestroy(){
     this.sub.unsubscribe();
+    this.sub2.unsubscribe();
   }
   retour(){
     this.router.navigate(["auteurs"]);
   }
   onClickButton(){
-
+    
   }
 }
