@@ -1,31 +1,11 @@
 mat-card {
-    display: flex;
-    margin-top: 10px;
-    padding: 10px;
-    align-items: end;
-}
-
-mat-card-content {
-    align-self: start;
     width: 600px;
+    height: 150px;
+    align-items: center;
 }
 
 mat-card-header {
-    font-size: 30px;
-    font-family: 'Protest Riot', sans-serif;
-}
-
-hr {
-    width: 100%;
-}
-
-.butt {
-    align-self: start;
-    display: flex;
-    margin-top: 5px;
-}
-
-button {
-    margin-left: 5px;
-    width: 15vh;
+    margin-bottom: 50px;
+    font-size: 25px;
+    text-align: center;
 }
